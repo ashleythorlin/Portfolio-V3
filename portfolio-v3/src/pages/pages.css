@@ -1,0 +1,22 @@
+.container .content {
+    width: 80vw;
+    margin: auto;
+}
+
+.section {
+    display: flex;
+    margin: 12vh 0 8vh;
+    padding: 5em;
+    background-color: var(--section);
+    height: 80vh;
+    justify-items: center;
+    align-items: center;
+}
+
+.subsection {
+    margin: margin;
+}
+
+h1 {
+    font-size: 48px;
+}
