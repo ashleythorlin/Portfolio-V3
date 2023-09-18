@@ -1,16 +1,16 @@
 import { default as React, useState, useEffect, SetStateAction } from "react";
-import { Link } from 'react-router-dom'
 import "./navbar.css";
 import { ActiveNav } from "../../types"
 
 interface NavProps {
     activeNav: ActiveNav,
     setActiveNav: React.Dispatch<SetStateAction<ActiveNav>>,
+    colorWay: Array<string>
 }
 
 function NavBar (props: NavProps) {
     const body = document.body;
-    const bgColorsBody = ["#b8e779", "#6bc99f","#4f889b",  "#4F6B89", "#4f4d76", "#5F3C68"];
+    const bgColorsBody = props.colorWay
     const menu: Element | null = body.querySelector(".menu");
     const menuBorder: Element | null | undefined = menu?.querySelector(".menu__border");
 
@@ -40,7 +40,7 @@ function NavBar (props: NavProps) {
 
     function animateNav() {
         const index = props.activeNav.index
-        body.style.backgroundColor = bgColorsBody[index];
+        // body.style.backgroundColor = bgColorsBody[index];
         const element = document.getElementById(props.activeNav.id)
         if (menu !== null){
             const offsetActiveItem = element?.getBoundingClientRect();
@@ -51,31 +51,37 @@ function NavBar (props: NavProps) {
         }
     }
 
+    // window.addEventListener("resize", () => {
+    //     animateNav();
+    //     let menu = body.querySelector(".menu");
+    //     (menu as HTMLElement).style.setProperty("--timeOut", "none");
+    // });
+
   return (
     <div className="anim-nav-bar">
         {/* <h1 id="name">ashley thorlin</h1> */}
         <menu className="menu">
             {/* <!--     Home 23876C --> */}
-            <Link 
+            <a 
             className="menu__item active" 
             id="homeNav"
             style={{"backgroundColor": bgColorsBody[0]}}
             onClick={() => triggerUpdate("homeNav", 0)}
-            to="/portfolio"
+            href="#home-container"
             >
                 <svg className="icon" viewBox="0 0 24 24" >
                     <path  d="M4,12 l8,-8 l8,8"/>
                     <path  d="M7,9 v10 h10 v-10"/>
                     <path  d="M10,19 v-6 h4 v6"/>
                 </svg>
-            </Link>
+            </a>
             {/* <!-- Experience --> */}
-            <Link 
+            <a 
             className="menu__item" 
             id="experienceNav"
             style={{"backgroundColor": bgColorsBody[1]}}
-            onClick={(e) => triggerUpdate("experienceNav", 3)}
-            to="/portfolio/experience"
+            onClick={(e) => triggerUpdate("experienceNav", 1)}
+            href="#experience-container"
             > 
                 <svg className="icon" viewBox="0 0 24 24" >
                     <path  d="M8,8 v-4 h8 v4"/>
@@ -83,51 +89,51 @@ function NavBar (props: NavProps) {
                     <path  d="M20,12 h-16"/>
                     <path  d="M10,12 v2 h4 v-2"/>
                 </svg>
-            </Link>
+            </a>
             {/* <!-- Projects --> */}
-            <Link 
+            <a 
             className="menu__item" 
             id="projectsNav"
             style={{"backgroundColor": bgColorsBody[2]}}
-            onClick={(e) => triggerUpdate("projectsNav", 4)}
-            to="/portfolio/projects"
+            onClick={(e) => triggerUpdate("projectsNav", 2)}
+            href="#projects-container"
             >
                 <svg className="icon" viewBox="0 0 24 24" >
                     <path  d="M7,8 l-4,4 l4,4"/>
                     <path  d="M17,8  l4,4 l-4,4"/>
                     <path  d="M10,19 l4,-14"/>
                 </svg>
-            </Link>
+            </a>
             {/* <!-- Skills --> */}
-            <Link 
+            <a 
             className="menu__item" 
             id="skillsNav"
             style={{"backgroundColor": bgColorsBody[3]}}
-            onClick={(e) => triggerUpdate("skillsNav", 2)}
-            to="/portfolio/skills"
+            onClick={(e) => triggerUpdate("skillsNav", 3)}
+            href="#skills-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
                     <path  d="M3.4,11.9l8.8,4.4l8.4-4.4"/>
                     <path  d="M3.4,16.2l8.8,4.5l8.4-4.5"/>
                     <path  d="M3.7,7.8l8.6-4.5l8,4.5l-8,4.3L3.7,7.8z"/>
                 </svg>
-            </Link> 
+            </a> 
             {/* <!-- Education 1C7665 --> */}
-            <Link
+            <a
             className="menu__item"
             id="educationNav"
             style={{"backgroundColor": bgColorsBody[4]}}
-            onClick={() => triggerUpdate("educationNav", 1)}
-            to="/portfolio/education"
+            onClick={() => triggerUpdate("educationNav", 4)}
+            href="#education-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
                     <path d="M4,7.5 l8,-3.5 l8,3.5 l-8,3.5 l-8,-3.5"/>
                     <path d="M12,7 l-8,2 c0,0,-0.3,0.3,0.3,0.3 l-0.5,3 l1,3 h-2 l1,-3"/>
                     <path d="M8,9 l-1.5,8 c0,0,0,2,6,2 c0,0,4,0,6,-2 l-1.5,-8"/>
                 </svg>
-            </Link>
+            </a>
             {/* <!--     Current --> */}
-            {/* <Link 
+            {/* <a 
             className="menu__item" 
             id="currentNav"
             style={{"backgroundColor": bgColorsBody[5]}}
@@ -140,21 +146,21 @@ function NavBar (props: NavProps) {
                     <path  d="M12,16 v4"/>
                     <path  d="M6,20 h12"/>
                 </svg>
-            </Link> */}
+            </a> */}
             {/* <!-- Resume --> */}
-            <Link 
+            <a 
             className="menu__item" 
             id="resumeNav"
             style={{"backgroundColor": bgColorsBody[5]}}
             onClick={(e) => triggerUpdate("resumeNav", 5)}
-            to="/portfolio/resume"
+            href="#resume-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
                     <path  d="M6.7,4.8 h10.7 c0.3,0,0.6,0.2,0.7,0.5 l2.8,7.3 c0,0.1,0,0.2,0,0.3 v5.6 c0,0.4-0.4,0.8-0.8,0.8 H3.8
                     C3.4,19.3,3,19,3,18.5 v-5.6 c0-0.1,0-0.2,0.1-0.3 L6,5.3C6.1,5,6.4,4.8,6.7,4.8z"/>
                     <path  d="M3.4,12.9 H8 l1.6,2.8 h4.9 l1.5-2.8 h4.6"/>
                 </svg>
-            </Link>
+            </a>
             <div className="menu__border"></div>
 
         </menu>

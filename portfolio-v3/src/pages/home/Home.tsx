@@ -1,12 +1,24 @@
-import React from 'react';
+import {default as React, useState } from 'react';
 import '../pages.css'
 
 function Home () {
-    return (
-        <div className="container" id="home">
-            <div className="page-assets">
+      // change background color on scroll
+    const [scrollTop, setScrollTop] = useState(0);
 
-            </div>
+    const handleScroll = (event: React.UIEvent<HTMLElement>) => {
+        const scrollTop = event.currentTarget.scrollTop;
+        console.log("here: ", scrollTop)
+        console.log(event.currentTarget.offsetHeight);
+        // if (scrollTop > 100){
+        //     document.body.style.backgroundColor = bgColorsBody[1];
+        // }
+
+    };
+    return (
+        <div className="container" id="home-container"
+        onScroll={(e) => handleScroll(e)}>
+            {/* <div className="content page-assets" >
+            </div> */}
             <div className="content" >
                 <div className='section' id="title-card" style={{textAlign: "center"}}>
                     <h1 

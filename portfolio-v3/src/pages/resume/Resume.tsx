@@ -3,7 +3,7 @@ import '../pages.css'
 
 const Resume = () => {
     return (
-        <div className="container" id="resume">
+        <div className="container" id="resume-container">
             <div className="page-assets">
 
             </div>

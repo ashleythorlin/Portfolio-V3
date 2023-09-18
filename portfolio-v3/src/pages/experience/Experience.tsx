@@ -3,16 +3,16 @@ import '../pages.css'
 
 const Experience = () => {
     return (
-        <div className="container" id="experience">
-            <div className="page-assets">
+        <div className="container" id="experience-container">
+            {/* <div className="page-assets">
 
-            </div>
+            </div> */}
             <div className="content" >
-                <div className='section' style={{textAlign: "center"}}>
+                <div className='section'>
                     <h1 
                     style={{textAlign: "center"}}
                     >
-                        welcome!
+                        about me
                     </h1>
                 </div>
             </div>

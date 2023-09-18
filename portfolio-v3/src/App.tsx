@@ -18,41 +18,59 @@ function App() {
       id: "homeNav", 
       index: 0
     })
+  const bgColorsBody = ["#b8e779", "#6bc99f","#4f889b",  "#4F6B89", "#4f4d76", "#5F3C68"];
+    
 
   return (
-    <div className='app'>
-      <BrowserRouter>
+    <div className='app' >
         <NavBar 
         activeNav={activeNav}
         setActiveNav={setActiveNav}
+        colorWay={bgColorsBody}
         />
-        <Routes>
-          <Route path={"/"}
-            element={<Navigate replace to='/portfolio' />}
-          />
-          <Route path={"/portfolio"}
-            element={<Home />}
-          />
-          <Route path={"/portfolio/education"}
-            element={<Education />}
-          />
-          <Route path="/portfolio/skills" 
-            element={<Skills />}
-          />
-          <Route path="/portfolio/experience" 
-            element={<Experience />}
-          />
-          <Route path="/portfolio/projects" 
-            element={<Projects />}
-          />
-          <Route path="/portfolio/resume" 
-            element={<Resume />}
-          />
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
+        <Home />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Education />
+        <Resume />
     </div>
   );
+  // for multipage app
+  // return (
+  //   <div className='app'>
+  //     <BrowserRouter>
+  //       <NavBar 
+  //       activeNav={activeNav}
+  //       setActiveNav={setActiveNav}
+  //       />
+  //       <Routes>
+  //         <Route path={"/"}
+  //           element={<Navigate replace to='/portfolio' />}
+  //         />
+  //         <Route path={"/portfolio"}
+  //           element={<Home />}
+  //         />
+  //         <Route path={"/portfolio/education"}
+  //           element={<Education />}
+  //         />
+  //         <Route path="/portfolio/skills" 
+  //           element={<Skills />}
+  //         />
+  //         <Route path="/portfolio/experience" 
+  //           element={<Experience />}
+  //         />
+  //         <Route path="/portfolio/projects" 
+  //           element={<Projects />}
+  //         />
+  //         <Route path="/portfolio/resume" 
+  //           element={<Resume />}
+  //         />
+  //       </Routes>
+  //       <Footer/>
+  //     </BrowserRouter>
+  //   </div>
+  // );
 }
 
 export default App;

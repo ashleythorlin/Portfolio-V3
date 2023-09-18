@@ -3,16 +3,15 @@ import '../pages.css'
 
 const Education = () => {
     return (
-        <div className="container" id="education">
-            <div className="page-assets">
-
-            </div>
+        <div className="container" id="education-container">
+            {/* <div className="page-assets">
+            </div> */}
             <div className="content" >
-                <div className='section' style={{textAlign: "center"}}>
+                <div className='section'>
                     <h1 
                     style={{textAlign: "center"}}
                     >
-                        welcome!
+                        about me
                     </h1>
                 </div>
             </div>
