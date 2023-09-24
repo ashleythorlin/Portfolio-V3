@@ -1,25 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-:root {
-  --contrast1: #492d4f;
-  --contrast2: #4f889b;
-  --contrast3: #6bc99f;
-  --contrast4: #b8e779;
-  --section: #252525;
-  --background: #2b1c2e;
-  --nav: #252525;
-  --footer: #252525;
-  --footertext: #818181;
-  --black: #252525;
-  --font: #ffffff;
-  --font2: #4f4d76;
-
-  /* gradient */
-  --colorone: rgba(0, 255, 255, 0.1);
-  --colortwo: rgba(0, 255, 179, 0.1);
-  --colorthree: rgba(0, 162, 255, 0.1);
-  --colorfour: rgba(0, 89, 255, 0.1);
-}
 
 * {
   margin: 0;
@@ -35,6 +15,18 @@ body {
   color: var(--font);
   display: flex;
   flex-direction: column;
+}
+
+/*  */
+body {
+  height: 6800; /* Used to enable scrolling */
+  background: linear-gradient(
+    var(--scheme1) 28%,
+    var(--scheme2) 31%,
+    var(--scheme3) 42%,
+    var(--scheme4) 45%,
+    var(--scheme5) 83.7%,
+    var(--scheme6) 100%);
 }
 
 .app {
@@ -65,4 +57,8 @@ body {
 
 .weblink:hover {
   color: var(--accent1);
+}
+
+h1 {
+  font-size: 10px;
 }

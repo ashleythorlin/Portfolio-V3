@@ -12,7 +12,7 @@ const Experience = () => {
                     <h1 
                     style={{textAlign: "center"}}
                     >
-                        about me
+                        experience
                     </h1>
                 </div>
             </div>

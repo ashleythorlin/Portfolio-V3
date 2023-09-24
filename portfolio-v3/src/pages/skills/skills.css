@@ -1,0 +1,47 @@
+#skills-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#skills-content .section {
+    width: 30vw;
+    flex-direction: column;
+    padding: 5vh;
+}
+
+#skills-content .section h1 {
+    margin-bottom: 10px;
+}
+
+#skills-content .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+
+#skills-content .grid .grid-item {
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#skills-content .grid-item-title {
+    text-align: center;
+}
+
+
+#skills-content .grid .grid-item {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-color: var(--item);
+    border-width: 3px;
+    border-style: solid;
+    margin: 5px;
+    aspect-ratio: 1;
+}
+
+#skills-content .grid-item:hover {
+    background-color: var(--item);
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../pages.css'
+import './projects.css'
 
 const Projects = () => {
     return (
@@ -7,13 +8,25 @@ const Projects = () => {
             <div className="page-assets">
 
             </div>
-            <div className="content" >
-                <div className='section' style={{textAlign: "center"}}>
-                    <h1 
-                    style={{textAlign: "center"}}
-                    >
-                        welcome!
+            <div className="content" id="projects-content">
+                <div className='section' id="projects-grid">
+                    <h1 >
+                        projects
                     </h1>
+                    <div className="grid">
+                        <div className="grid-item">
+                            <div className="grid-item-title">Sorting Visualizer</div>
+                        </div>
+                        <div className="grid-item">
+                            <div className="grid-item-title">Risk Prediction Model for Heart Disease</div>
+                        </div>
+                        <div className="grid-item">
+                            <div className="grid-item-title">Portfolio</div>
+                        </div>
+                        <div className="grid-item">
+                            <div className="grid-item-title">something else</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -90,25 +90,11 @@ function NavBar (props: NavProps) {
                     <path  d="M10,12 v2 h4 v-2"/>
                 </svg>
             </a>
-            {/* <!-- Projects --> */}
-            <a 
-            className="menu__item" 
-            id="projectsNav"
-            style={{"backgroundColor": bgColorsBody[2]}}
-            onClick={(e) => triggerUpdate("projectsNav", 2)}
-            href="#projects-container"
-            >
-                <svg className="icon" viewBox="0 0 24 24" >
-                    <path  d="M7,8 l-4,4 l4,4"/>
-                    <path  d="M17,8  l4,4 l-4,4"/>
-                    <path  d="M10,19 l4,-14"/>
-                </svg>
-            </a>
             {/* <!-- Skills --> */}
             <a 
             className="menu__item" 
             id="skillsNav"
-            style={{"backgroundColor": bgColorsBody[3]}}
+            style={{"backgroundColor": bgColorsBody[2]}}
             onClick={(e) => triggerUpdate("skillsNav", 3)}
             href="#skills-container"
             >
@@ -118,6 +104,20 @@ function NavBar (props: NavProps) {
                     <path  d="M3.7,7.8l8.6-4.5l8,4.5l-8,4.3L3.7,7.8z"/>
                 </svg>
             </a> 
+            {/* <!-- Projects --> */}
+            <a 
+            className="menu__item" 
+            id="projectsNav"
+            style={{"backgroundColor": bgColorsBody[3]}}
+            onClick={(e) => triggerUpdate("projectsNav", 2)}
+            href="#projects-container"
+            >
+                <svg className="icon" viewBox="0 0 24 24" >
+                    <path  d="M7,8 l-4,4 l4,4"/>
+                    <path  d="M17,8  l4,4 l-4,4"/>
+                    <path  d="M10,19 l4,-14"/>
+                </svg>
+            </a>
             {/* <!-- Education 1C7665 --> */}
             <a
             className="menu__item"
@@ -147,13 +147,13 @@ function NavBar (props: NavProps) {
                     <path  d="M6,20 h12"/>
                 </svg>
             </a> */}
-            {/* <!-- Resume --> */}
+            {/* <!-- Contact --> */}
             <a 
             className="menu__item" 
-            id="resumeNav"
+            id="contactNav"
             style={{"backgroundColor": bgColorsBody[5]}}
-            onClick={(e) => triggerUpdate("resumeNav", 5)}
-            href="#resume-container"
+            onClick={(e) => triggerUpdate("contactNav", 5)}
+            href="#contact-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
                     <path  d="M6.7,4.8 h10.7 c0.3,0,0.6,0.2,0.7,0.5 l2.8,7.3 c0,0.1,0,0.2,0,0.3 v5.6 c0,0.4-0.4,0.8-0.8,0.8 H3.8

@@ -1,0 +1,42 @@
+#projects-content {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    width: 70%;
+}
+
+#projects-content .section {
+    flex-direction: column;
+    padding: 5vh;
+}
+
+#projects-content .section h1 {
+    margin-bottom: 10px;
+}
+
+#projects-content .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+#projects-content .grid-item-title {
+    text-align: center;
+}
+
+#projects-content .grid .grid-item {
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-color: var(--item);
+    border-width: 3px;
+    border-style: solid;
+    margin: 5px;
+    aspect-ratio: 1;
+}
+
+#projects-content .grid-item:hover {
+    background-color: var(--item);
+}
+
+

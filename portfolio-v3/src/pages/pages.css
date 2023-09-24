@@ -1,3 +1,8 @@
+.category {
+    /* to ensure that page assets can be overlayed */
+    position: relative; 
+}
+
 .container {
     height: 100vh;
     width: 100vw;
@@ -7,7 +12,7 @@
 }
 
 .content {
-    height: 80%;
+    height: 80vh;
 }
 
 .section {
@@ -25,9 +30,9 @@
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 28px;
 }
 
-/* .page-assets {
-    z-index
-} */
+.page-assets {
+    position: absolute;
+}

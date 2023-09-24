@@ -1,0 +1,20 @@
+#education-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#education-content .section {
+    width: 30vw;
+    flex-direction: column;
+    padding: 5vh;
+}
+
+#education-content .section h1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#education-content .sub-section {
+    height: 50%;
+    width: 100%;
+}

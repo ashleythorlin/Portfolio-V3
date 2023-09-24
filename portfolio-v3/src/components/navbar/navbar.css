@@ -38,6 +38,7 @@ body{
     align-items: center;
     justify-content: center;
     background-color: var(--bgColorMenu);
+    z-index: 5;
     
 }
 

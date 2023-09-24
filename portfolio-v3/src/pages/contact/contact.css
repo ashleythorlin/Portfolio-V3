@@ -1,0 +1,69 @@
+#contact-container {
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-content {
+    margin-right: auto;
+    height: fit-content;
+}
+
+#contact-content h1{
+    font-size: 36px;
+}
+
+#contact-content .section {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 8vw 5vh 8vw;
+    height: fit-content;
+    transform: translate(0, 5%);
+}
+
+#contact-content .section h1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#contact-content .sub-section {
+    /* height: 100%; */
+    width: 100%;
+}
+
+.sub-section #resume {
+    height: 0%;
+}
+
+#contact-content .link {
+    color: var(--font);
+    text-decoration: none;
+
+}
+
+#contact-content .link:hover {
+    color: var(--linkhover);
+}
+
+/* contact links css */
+#contact-links {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-link {
+    font-size: 100px;
+    margin: 20px;
+}
+
+/* resume link css */
+.resume-link {
+    font-size: 34px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    line-height: 30px;
+}
+
+.resume-link h1{
+    margin-right: 10px;
+}

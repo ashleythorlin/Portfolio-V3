@@ -1,0 +1,25 @@
+:root {
+    --scheme1: #a2c96e;
+    --scheme2: #6bc99f;
+    --scheme3: #4f889b;
+    --scheme4: #4f6b89;
+    --scheme5: #4f4d76;
+    --scheme6: #5F3C68;
+    --contrast1: #492d4f;
+    --item: #3f3f3f;
+    --section: #313131;
+    --background: #2b1c2e;
+    --nav: #202020;
+    --footer: #252525;
+    --footertext: #818181;
+    --black: #252525;
+    --font: #f7f7f7;
+    --linkhover: #957c9b;
+    --font2: #4f4d76;
+  
+    /* gradient */
+    --colorone: rgba(0, 255, 255, 0.1);
+    --colortwo: rgba(0, 255, 179, 0.1);
+    --colorthree: rgba(0, 162, 255, 0.1);
+    --colorfour: rgba(0, 89, 255, 0.1);
+  }
