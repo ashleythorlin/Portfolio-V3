@@ -15,7 +15,7 @@
 #contact-content .section {
     display: flex;
     flex-direction: column;
-    padding: 5vh 8vw 5vh 8vw;
+    padding: 5vh 5vw 5vh 5vw;
     height: fit-content;
     transform: translate(0, 5%);
 }
@@ -37,7 +37,6 @@
 #contact-content .link {
     color: var(--font);
     text-decoration: none;
-
 }
 
 #contact-content .link:hover {
@@ -52,7 +51,16 @@
 
 .contact-link {
     font-size: 100px;
-    margin: 20px;
+    margin: 20px 35px 20px 35px;
+    -webkit-transition:  -webkit-transform .2s ease-out;
+    -moz-transition: -moz-transform .2s ease-out;
+    -o-transition: -o-transform .2s ease-out;
+    -ms-transition: -ms-transform .2s ease-out; 
+    transition: transform .2s ease-out; 
+}
+
+.contact-link:hover {
+    transform: scale(1.25);
 }
 
 /* resume link css */
