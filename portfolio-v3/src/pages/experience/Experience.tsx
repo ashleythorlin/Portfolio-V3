@@ -9,11 +9,7 @@ const Experience = () => {
             </div> */}
             <div className="content" >
                 <div className='section'>
-                    <h1 
-                    style={{textAlign: "center"}}
-                    >
-                        experience
-                    </h1>
+                    <h1>experience</h1>
                 </div>
             </div>
         </div>

@@ -8,7 +8,7 @@ function Home () {
             <div className="container" id="home-container">
                 <div className="content page-assets" >
                 </div>
-                <div className="content" >
+                <div className="content" id="home-content">
                     <div className='section welcome' id="title-card">
                         <h1
                         >

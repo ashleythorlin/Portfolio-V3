@@ -51,12 +51,6 @@ function NavBar (props: NavProps) {
         }
     }
 
-    // window.addEventListener("resize", () => {
-    //     animateNav();
-    //     let menu = body.querySelector(".menu");
-    //     (menu as HTMLElement).style.setProperty("--timeOut", "none");
-    // });
-
   return (
     <div className="anim-nav-bar">
         {/* <h1 id="name">ashley thorlin</h1> */}
@@ -75,12 +69,27 @@ function NavBar (props: NavProps) {
                     <path  d="M10,19 v-6 h4 v6"/>
                 </svg>
             </a>
+            {/* <!--  About Me  --> */}
+            <a 
+            className="menu__item" 
+            id="aboutNav"
+            style={{"backgroundColor": bgColorsBody[1]}}
+            onClick={(e) => triggerUpdate("aboutNav", 1)}
+            href="#about-me-container"
+            >
+                <svg className="icon" viewBox="0 0 24 24">
+                    <path  d="M4,4 v12 h16 v -12 z"/>
+                    <path  d="M17,13 v-6 h-10 v6 z"/>
+                    <path  d="M12,16 v4"/>
+                    <path  d="M6,20 h12"/>
+                </svg>
+            </a>
             {/* <!-- Experience --> */}
             <a 
             className="menu__item" 
             id="experienceNav"
-            style={{"backgroundColor": bgColorsBody[1]}}
-            onClick={(e) => triggerUpdate("experienceNav", 1)}
+            style={{"backgroundColor": bgColorsBody[2]}}
+            onClick={(e) => triggerUpdate("experienceNav", 2)}
             href="#experience-container"
             > 
                 <svg className="icon" viewBox="0 0 24 24" >
@@ -94,7 +103,7 @@ function NavBar (props: NavProps) {
             <a 
             className="menu__item" 
             id="skillsNav"
-            style={{"backgroundColor": bgColorsBody[2]}}
+            style={{"backgroundColor": bgColorsBody[3]}}
             onClick={(e) => triggerUpdate("skillsNav", 3)}
             href="#skills-container"
             >
@@ -108,8 +117,8 @@ function NavBar (props: NavProps) {
             <a 
             className="menu__item" 
             id="projectsNav"
-            style={{"backgroundColor": bgColorsBody[3]}}
-            onClick={(e) => triggerUpdate("projectsNav", 2)}
+            style={{"backgroundColor": bgColorsBody[4]}}
+            onClick={(e) => triggerUpdate("projectsNav", 4)}
             href="#projects-container"
             >
                 <svg className="icon" viewBox="0 0 24 24" >
@@ -122,8 +131,8 @@ function NavBar (props: NavProps) {
             <a
             className="menu__item"
             id="educationNav"
-            style={{"backgroundColor": bgColorsBody[4]}}
-            onClick={() => triggerUpdate("educationNav", 4)}
+            style={{"backgroundColor": bgColorsBody[5]}}
+            onClick={() => triggerUpdate("educationNav", 5)}
             href="#education-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
@@ -132,27 +141,12 @@ function NavBar (props: NavProps) {
                     <path d="M8,9 l-1.5,8 c0,0,0,2,6,2 c0,0,4,0,6,-2 l-1.5,-8"/>
                 </svg>
             </a>
-            {/* <!--     Current --> */}
-            {/* <a 
-            className="menu__item" 
-            id="currentNav"
-            style={{"backgroundColor": bgColorsBody[5]}}
-            onClick={(e) => triggerUpdate("currentNav", 5)}
-            to="/portfolio/current"
-            >
-                <svg className="icon" viewBox="0 0 24 24">
-                    <path  d="M4,4 v12 h16 v -12 z"/>
-                    <path  d="M17,13 v-6 h-10 v6 z"/>
-                    <path  d="M12,16 v4"/>
-                    <path  d="M6,20 h12"/>
-                </svg>
-            </a> */}
             {/* <!-- Contact --> */}
             <a 
             className="menu__item" 
             id="contactNav"
-            style={{"backgroundColor": bgColorsBody[5]}}
-            onClick={(e) => triggerUpdate("contactNav", 5)}
+            style={{"backgroundColor": bgColorsBody[6]}}
+            onClick={(e) => triggerUpdate("contactNav", 6)}
             href="#contact-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
