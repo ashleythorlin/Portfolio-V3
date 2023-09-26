@@ -18,6 +18,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    width: 100%;
 }
 
 #projects-content .grid-item-title {
@@ -39,4 +40,23 @@
     background-color: var(--item);
 }
 
+#projects-content .info-tooltip {
+    min-width: 10vw;
+    z-index: 2;
+    padding: 1em;
+    position: absolute;
+    background-color: var(--item);
+    /* box-shadow: 5px 5px 10px var(--nav); */
+    border: 2px solid var(--nav);
+    transform: translate(50%, -50%);
+    /* bottom: -150%;
+    left: 60%; */
+    text-align: center;
+}
+
+.info-tooltip li {
+    font-size: 0.8vw;
+    list-style-type: none;
+    margin: 10px 0 10px 0;
+}
 

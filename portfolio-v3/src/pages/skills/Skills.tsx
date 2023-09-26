@@ -1,6 +1,29 @@
-import React from 'react';
+import { default as React, useState } from 'react';
 import '../pages.css'
 import './skills.css'
+import { DisplayInfo, SkillData } from "../../types";
+
+const skills = [
+    {
+        name: "Python",
+        desc: ["Ambry Genetics", "Data Science"]
+    },
+    {
+        name: "Python",
+        desc: ["Ambry Genetics", "Data Science"]
+    }
+]
+
+const techs = [
+    {
+        name: "AWS",
+        desc: ["Ambry Genetics", "Capstone Project"]
+    },
+    {
+        name: "Docker",
+        desc: ["Ambry Genetics"]
+    }
+]
 
 const Skills = () => {
     return (
@@ -14,18 +37,10 @@ const Skills = () => {
                         languages
                     </h1>
                     <div className="grid">
-                        <div className="grid-item">
-                            <div className="grid-item-title">Python</div>
-                        </div>
-                        <div className="grid-item">
-                            <div className="grid-item-title">Javascript</div>
-                        </div>
-                        <div className="grid-item">
-                            <div className="grid-item-title">C++</div>
-                        </div>
-                        <div className="grid-item">
-                            <div className="grid-item-title">R</div>
-                        </div>
+                        {skills && 
+                        (skills as Array<SkillData>).map((item, index) => (
+                        <Skill data={item} key={index+item.name}/>
+                        ))}
                     </div>
                 </div>
                 <div className='section' id="tech-grid" style={{marginLeft: "auto"}}>
@@ -33,23 +48,66 @@ const Skills = () => {
                         technologies
                     </h1>
                     <div className="grid">
-                        <div className="grid-item">
-                            <div className="grid-item-title">Amazon Web Services</div>
-                        </div>
-                        <div className="grid-item">
-                            <div className="grid-item-title">Nginx</div>
-                        </div>
-                        <div className="grid-item">
-                            <div className="grid-item-title">Keras</div>
-                        </div>
-                        <div className="grid-item">
-                            <div className="grid-item-title">Bitbucket</div>
-                        </div>
+                        {techs && 
+                        (techs as Array<SkillData>).map((item, index) => (
+                        <Skill data={item} key={index+item.name}/>
+                        ))}
                     </div>
                 </div>
             </div>
         </div>
     )
+}
+
+interface Data {
+    data: SkillData
+}
+
+const Skill = (props: Data) => {
+    const [displayInfo, setDisplayInfo] = useState<DisplayInfo>(
+        {
+            display: "none"
+        })
+
+    function handleMouseIn() {
+        setDisplayInfo({ display: "inline-block" })
+    }
+    
+    function handleMouseOut() {
+        setDisplayInfo({ display: "none" })
+    }
+
+    function handleInfoMouseIn() {
+        setDisplayInfo({ display: "inline-block" })
+    }
+    
+    function handleInfoMouseOut() {
+        setDisplayInfo({ display: "none" })
+    }
+    return (
+        <div style={{position: "relative"}}>
+            <div className="grid-item"
+            onMouseOver={handleMouseIn.bind(this)}
+            onMouseOut={handleMouseOut.bind(this)}>
+                <div className="grid-item-title">{props.data.name}</div>
+            </div>
+            <div style={{position: "absolute"}}>
+                <div className="info-tooltip"
+                style={{display: displayInfo.display}}
+                onMouseOver={handleInfoMouseIn.bind(this)}
+                onMouseOut={handleInfoMouseOut.bind(this)}>
+                    <ul>
+                        {props.data.desc && 
+                        (props.data.desc as Array<string>).map((item, index) => (
+                        <li key={index+item}>
+                            {item}
+                        </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+      );
 }
 
 export default Skills

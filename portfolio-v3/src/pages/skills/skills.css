@@ -17,19 +17,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 1fr);
-}
-
-
-#skills-content .grid .grid-item {
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
+    width: 100%;
 }
 
 #skills-content .grid-item-title {
     text-align: center;
 }
-
 
 #skills-content .grid .grid-item {
     justify-content: center;
@@ -44,4 +37,24 @@
 
 #skills-content .grid-item:hover {
     background-color: var(--item);
+}
+
+#skills-content .info-tooltip {
+    min-width: 10vw;
+    z-index: 2;
+    padding: 1em;
+    position: absolute;
+    background-color: var(--item);
+    /* box-shadow: 5px 5px 10px var(--nav); */
+    border: 2px solid var(--nav);
+    transform: translate(50%, -50%);
+    /* bottom: -150%;
+    left: 60%; */
+    text-align: center;
+}
+
+.info-tooltip li {
+    font-size: 0.8vw;
+    list-style-type: none;
+    margin: 10px 0 10px 0;
 }
