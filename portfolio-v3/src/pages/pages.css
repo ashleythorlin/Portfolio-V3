@@ -4,7 +4,7 @@
 }
 
 .container {
-    height: 100vh;
+    height: 120vh;
     width: 100vw;
     margin: 0;
     display: flex;
@@ -20,7 +20,7 @@
     margin: 8vw;
     padding: 5em;
     background-color: var(--section);
-    height: 80vh;
+    height: 75vh;
     justify-items: center;
     align-items: center;
 }

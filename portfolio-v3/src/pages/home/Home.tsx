@@ -9,11 +9,13 @@ function Home () {
                 <div className="content page-assets" >
                 </div>
                 <div className="content" id="home-content">
-                    <div className='section welcome' id="title-card">
-                        <h1
-                        >
-                            welcome!
+                    <div className='section' id="welcome">
+                        <h1>
+                            ashley thorlin
                         </h1>
+                        <h2>
+                            software engineer
+                        </h2>
                     </div>
                 </div>
             </div>

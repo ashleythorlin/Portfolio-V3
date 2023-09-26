@@ -1,15 +1,27 @@
-.welcome {
-    width: 50vw;
-    height: 50vh;
-    margin: 0 auto;
-    margin-top: 15vw;
-    margin-bottom: 26vw;
-    text-align: center;
+#home-content {
+    display: grid;
 }
 
-.welcome h1 { 
-    flex: 1;
+#welcome {
+    width: 50vw;
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 10%;    
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+#welcome h1 { 
     font-size: 48px;
+    text-shadow: 0 0 8px var(--font);
+}
+
+#welcome h2 { 
+    font-size: 30px;
+    text-shadow: 0 0 8px var(--font);
 }
 
 #about-me {
