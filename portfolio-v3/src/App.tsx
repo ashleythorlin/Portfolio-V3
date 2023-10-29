@@ -18,6 +18,7 @@ function App() {
       id: "homeNav", 
       index: 0
     })
+    
   // pull color scheme from colorScheme.css
   const bgColorsBody = [
     getComputedStyle(document.documentElement).getPropertyValue('--scheme1'), 

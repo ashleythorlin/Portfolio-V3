@@ -13,35 +13,32 @@ function NavBar (props: NavProps) {
     const bgColorsBody = props.colorWay
     const menu: Element | null = body.querySelector(".menu");
     const menuBorder: Element | null | undefined = menu?.querySelector(".menu_border");
+    
+    // old active nav state (used for deactivating last nav item)
+    const [oldActiveNav, setOldActiveNav] = useState<ActiveNav>(
+        {
+        id: props.activeNav.id, 
+        index: props.activeNav.index
+        })
 
     window.onload = function() {
-        triggerUpdate("homeNav", 0)
+        animateNav()
     };
 
     useEffect(() => {
+        // animate nav bar when active item changes (either on click or on scroll)
         animateNav();
         // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [props.activeNav]);
 
-    // set clicked element as active
-    function triggerUpdate(id: any, index: number) {
-        if (id !== props.activeNav){
-            // animate items and titles
-            // remove "active" class from old active element
-            document.getElementById(props.activeNav.id)?.classList.remove("active");
-            document.getElementById(props.activeNav.id + "Title")?.classList.remove("active");
-            // add active class to new active element
-            document.getElementById(id)?.classList.add("active");
-            document.getElementById(id + "Title")?.classList.add("active");
-            //update activeNav state
-            props.setActiveNav({
-                id: id, 
-                index: index
-            })
-        }
-    }
-
     function animateNav() {
+        // animate items and titles
+        // remove "active" class from old active element
+        document.getElementById(oldActiveNav.id)?.classList.remove("active");
+        document.getElementById(oldActiveNav.id + "Title")?.classList.remove("active");
+        // add active class to new active element
+        document.getElementById(props.activeNav.id)?.classList.add("active");
+        document.getElementById(props.activeNav.id + "Title")?.classList.add("active");
         // animates nav border
         const index = props.activeNav.index
         // body.style.backgroundColor = bgColorsBody[index];
@@ -53,6 +50,12 @@ function NavBar (props: NavProps) {
                 (menuBorder as HTMLElement).style.transform = `translate3d(-${left}, 0 , 0)`;
             }
         }
+        // update oldActiveNav to current item so that "active" 
+        //      is removed next time a diff page is viewed
+        setOldActiveNav({
+            id: props.activeNav.id, 
+            index: props.activeNav.index
+        })
     }
 
   return (
@@ -61,10 +64,10 @@ function NavBar (props: NavProps) {
         <menu className="menu">
             {/* <!--     Home 23876C --> */}
             <a 
-            className="menu_item active" 
+            className="menu_item" 
             id="homeNav"
             style={{"backgroundColor": bgColorsBody[0]}}
-            onClick={() => triggerUpdate("homeNav", 0)}
+            onClick={() => props.setActiveNav({id: "homeNav", index: 0})}
             href="#home-container"
             >
                 <svg className="icon" viewBox="0 0 24 24" >
@@ -84,7 +87,7 @@ function NavBar (props: NavProps) {
             className="menu_item" 
             id="aboutNav"
             style={{"backgroundColor": bgColorsBody[1]}}
-            onClick={(e) => triggerUpdate("aboutNav", 1)}
+            onClick={() => props.setActiveNav({id: "aboutNav", index: 1})}
             href="#about-me-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
@@ -105,7 +108,7 @@ function NavBar (props: NavProps) {
             className="menu_item" 
             id="experienceNav"
             style={{"backgroundColor": bgColorsBody[2]}}
-            onClick={(e) => triggerUpdate("experienceNav", 2)}
+            onClick={() => props.setActiveNav({id: "experienceNav", index: 2})}
             href="#experience-container"
             > 
                 <svg className="icon" viewBox="0 0 24 24" >
@@ -126,7 +129,7 @@ function NavBar (props: NavProps) {
             className="menu_item" 
             id="skillsNav"
             style={{"backgroundColor": bgColorsBody[3]}}
-            onClick={(e) => triggerUpdate("skillsNav", 3)}
+            onClick={() => props.setActiveNav({id: "skillsNav", index: 3})}
             href="#skills-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
@@ -146,7 +149,7 @@ function NavBar (props: NavProps) {
             className="menu_item" 
             id="projectsNav"
             style={{"backgroundColor": bgColorsBody[4]}}
-            onClick={(e) => triggerUpdate("projectsNav", 4)}
+            onClick={() => props.setActiveNav({id: "projectsNav", index: 4})}
             href="#projects-container"
             >
                 <svg className="icon" viewBox="0 0 24 24" >
@@ -166,7 +169,7 @@ function NavBar (props: NavProps) {
             className="menu_item"
             id="educationNav"
             style={{"backgroundColor": bgColorsBody[5]}}
-            onClick={() => triggerUpdate("educationNav", 5)}
+            onClick={() => props.setActiveNav({id: "educationNav", index: 5})}
             href="#education-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
@@ -186,7 +189,7 @@ function NavBar (props: NavProps) {
             className="menu_item" 
             id="contactNav"
             style={{"backgroundColor": bgColorsBody[6]}}
-            onClick={(e) => triggerUpdate("contactNav", 6)}
+            onClick={() => props.setActiveNav({id: "contactNav", index: 6})}
             href="#contact-container"
             >
                 <svg className="icon" viewBox="0 0 24 24">
