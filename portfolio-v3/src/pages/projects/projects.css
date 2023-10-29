@@ -32,6 +32,7 @@
     border-color: var(--item);
     border-width: 3px;
     border-style: solid;
+    border-radius: 5%;
     margin: 5px;
     aspect-ratio: 1;
 }

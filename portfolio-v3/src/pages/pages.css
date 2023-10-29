@@ -23,11 +23,12 @@
     height: 75vh;
     justify-items: center;
     align-items: center;
+    border-radius: 3%;
 }
 
-.subsection {
+/* .subsection {
     margin: margin;
-}
+} */
 
 h1 {
     font-size: 28px;

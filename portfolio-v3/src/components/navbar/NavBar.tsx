@@ -12,7 +12,7 @@ function NavBar (props: NavProps) {
     const body = document.body;
     const bgColorsBody = props.colorWay
     const menu: Element | null = body.querySelector(".menu");
-    const menuBorder: Element | null | undefined = menu?.querySelector(".menu__border");
+    const menuBorder: Element | null | undefined = menu?.querySelector(".menu_border");
 
     window.onload = function() {
         triggerUpdate("homeNav", 0)
@@ -26,10 +26,13 @@ function NavBar (props: NavProps) {
     // set clicked element as active
     function triggerUpdate(id: any, index: number) {
         if (id !== props.activeNav){
+            // animate items and titles
             // remove "active" class from old active element
             document.getElementById(props.activeNav.id)?.classList.remove("active");
+            document.getElementById(props.activeNav.id + "Title")?.classList.remove("active");
             // add active class to new active element
             document.getElementById(id)?.classList.add("active");
+            document.getElementById(id + "Title")?.classList.add("active");
             //update activeNav state
             props.setActiveNav({
                 id: id, 
@@ -39,6 +42,7 @@ function NavBar (props: NavProps) {
     }
 
     function animateNav() {
+        // animates nav border
         const index = props.activeNav.index
         // body.style.backgroundColor = bgColorsBody[index];
         const element = document.getElementById(props.activeNav.id)
@@ -57,7 +61,7 @@ function NavBar (props: NavProps) {
         <menu className="menu">
             {/* <!--     Home 23876C --> */}
             <a 
-            className="menu__item active" 
+            className="menu_item active" 
             id="homeNav"
             style={{"backgroundColor": bgColorsBody[0]}}
             onClick={() => triggerUpdate("homeNav", 0)}
@@ -68,10 +72,16 @@ function NavBar (props: NavProps) {
                     <path  d="M7,9 v10 h10 v-10"/>
                     <path  d="M10,19 v-6 h4 v6"/>
                 </svg>
+                <p
+                className="menu_item_title"
+                id="homeNavTitle"
+                >
+                    home
+                </p>
             </a>
             {/* <!--  About Me  --> */}
             <a 
-            className="menu__item" 
+            className="menu_item" 
             id="aboutNav"
             style={{"backgroundColor": bgColorsBody[1]}}
             onClick={(e) => triggerUpdate("aboutNav", 1)}
@@ -83,10 +93,16 @@ function NavBar (props: NavProps) {
                     <path  d="M12,16 v4"/>
                     <path  d="M6,20 h12"/>
                 </svg>
+                <p
+                className="menu_item_title"
+                id="aboutNavTitle"
+                >
+                    about me
+                </p>
             </a>
             {/* <!-- Experience --> */}
             <a 
-            className="menu__item" 
+            className="menu_item" 
             id="experienceNav"
             style={{"backgroundColor": bgColorsBody[2]}}
             onClick={(e) => triggerUpdate("experienceNav", 2)}
@@ -98,10 +114,16 @@ function NavBar (props: NavProps) {
                     <path  d="M20,12 h-16"/>
                     <path  d="M10,12 v2 h4 v-2"/>
                 </svg>
+                <p
+                className="menu_item_title"
+                id="experienceNavTitle"
+                >
+                    experience
+                </p>
             </a>
             {/* <!-- Skills --> */}
             <a 
-            className="menu__item" 
+            className="menu_item" 
             id="skillsNav"
             style={{"backgroundColor": bgColorsBody[3]}}
             onClick={(e) => triggerUpdate("skillsNav", 3)}
@@ -112,10 +134,16 @@ function NavBar (props: NavProps) {
                     <path  d="M3.4,16.2l8.8,4.5l8.4-4.5"/>
                     <path  d="M3.7,7.8l8.6-4.5l8,4.5l-8,4.3L3.7,7.8z"/>
                 </svg>
+                <p
+                className="menu_item_title"
+                    id="skillsNavTitle"
+                >
+                    skills
+                </p>
             </a> 
             {/* <!-- Projects --> */}
             <a 
-            className="menu__item" 
+            className="menu_item" 
             id="projectsNav"
             style={{"backgroundColor": bgColorsBody[4]}}
             onClick={(e) => triggerUpdate("projectsNav", 4)}
@@ -126,10 +154,16 @@ function NavBar (props: NavProps) {
                     <path  d="M17,8  l4,4 l-4,4"/>
                     <path  d="M10,19 l4,-14"/>
                 </svg>
+                <p
+                className="menu_item_title"
+                id="projectsNavTitle"
+                >
+                    projects
+                </p>
             </a>
             {/* <!-- Education 1C7665 --> */}
             <a
-            className="menu__item"
+            className="menu_item"
             id="educationNav"
             style={{"backgroundColor": bgColorsBody[5]}}
             onClick={() => triggerUpdate("educationNav", 5)}
@@ -140,10 +174,16 @@ function NavBar (props: NavProps) {
                     <path d="M12,7 l-8,2 c0,0,-0.3,0.3,0.3,0.3 l-0.5,3 l1,3 h-2 l1,-3"/>
                     <path d="M8,9 l-1.5,8 c0,0,0,2,6,2 c0,0,4,0,6,-2 l-1.5,-8"/>
                 </svg>
+                <p
+                className="menu_item_title"
+                id="educationNavTitle"
+                >
+                    education
+                </p>
             </a>
             {/* <!-- Contact --> */}
             <a 
-            className="menu__item" 
+            className="menu_item" 
             id="contactNav"
             style={{"backgroundColor": bgColorsBody[6]}}
             onClick={(e) => triggerUpdate("contactNav", 6)}
@@ -154,8 +194,14 @@ function NavBar (props: NavProps) {
                     C3.4,19.3,3,19,3,18.5 v-5.6 c0-0.1,0-0.2,0.1-0.3 L6,5.3C6.1,5,6.4,4.8,6.7,4.8z"/>
                     <path  d="M3.4,12.9 H8 l1.6,2.8 h4.9 l1.5-2.8 h4.6"/>
                 </svg>
+                <p
+                className="menu_item_title"
+                id="contactNavTitle"
+                >
+                    contact
+                </p>
             </a>
-            <div className="menu__border"></div>
+            <div className="menu_border"></div>
 
         </menu>
 

@@ -32,6 +32,7 @@
     border-width: 3px;
     border-style: solid;
     margin: 5px;
+    border-radius: 5%;
     aspect-ratio: 1;
 }
 
