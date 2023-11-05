@@ -26,8 +26,8 @@ const Projects = () => {
                         projects
                     </h1>
                     <div className="grid">
-                        {projects && 
-                        (projects as Array<ProjectData>).map((item, index) => (
+                        {projects &&
+                        (projects as ProjectData[]).map((item, index) => (
                         <Project data={item} key={index+item.name}/>
                         ))}
                     </div>
@@ -50,7 +50,7 @@ const Project = (props: Data) => {
     function handleMouseIn() {
         setDisplayInfo({ display: "inline-block" })
     }
-    
+
     function handleMouseOut() {
         setDisplayInfo({ display: "none" })
     }
@@ -58,7 +58,7 @@ const Project = (props: Data) => {
     function handleInfoMouseIn() {
         setDisplayInfo({ display: "inline-block" })
     }
-    
+
     function handleInfoMouseOut() {
         setDisplayInfo({ display: "none" })
     }
@@ -75,8 +75,8 @@ const Project = (props: Data) => {
                 onMouseOver={handleInfoMouseIn.bind(this)}
                 onMouseOut={handleInfoMouseOut.bind(this)}>
                     <ul>
-                        {props.data.desc && 
-                        (props.data.desc as Array<string>).map((item, index) => (
+                        {props.data.desc &&
+                        (props.data.desc as string[]).map((item, index) => (
                         <li key={index+item}>
                             {item}
                         </li>

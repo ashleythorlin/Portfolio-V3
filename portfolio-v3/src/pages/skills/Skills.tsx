@@ -37,8 +37,8 @@ const Skills = () => {
                         languages
                     </h1>
                     <div className="grid">
-                        {skills && 
-                        (skills as Array<SkillData>).map((item, index) => (
+                        {skills &&
+                        (skills as SkillData[]).map((item, index) => (
                         <Skill data={item} key={index+item.name}/>
                         ))}
                     </div>
@@ -48,8 +48,8 @@ const Skills = () => {
                         technologies
                     </h1>
                     <div className="grid">
-                        {techs && 
-                        (techs as Array<SkillData>).map((item, index) => (
+                        {techs &&
+                        (techs as SkillData[]).map((item, index) => (
                         <Skill data={item} key={index+item.name}/>
                         ))}
                     </div>
@@ -72,7 +72,7 @@ const Skill = (props: Data) => {
     function handleMouseIn() {
         setDisplayInfo({ display: "inline-block" })
     }
-    
+
     function handleMouseOut() {
         setDisplayInfo({ display: "none" })
     }
@@ -80,7 +80,7 @@ const Skill = (props: Data) => {
     function handleInfoMouseIn() {
         setDisplayInfo({ display: "inline-block" })
     }
-    
+
     function handleInfoMouseOut() {
         setDisplayInfo({ display: "none" })
     }
@@ -97,8 +97,8 @@ const Skill = (props: Data) => {
                 onMouseOver={handleInfoMouseIn.bind(this)}
                 onMouseOut={handleInfoMouseOut.bind(this)}>
                     <ul>
-                        {props.data.desc && 
-                        (props.data.desc as Array<string>).map((item, index) => (
+                        {props.data.desc &&
+                        (props.data.desc as string[]).map((item, index) => (
                         <li key={index+item}>
                             {item}
                         </li>

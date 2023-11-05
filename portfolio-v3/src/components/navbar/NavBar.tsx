@@ -5,7 +5,7 @@ import { ActiveNav } from "../../types"
 interface NavProps {
     activeNav: ActiveNav,
     setActiveNav: React.Dispatch<SetStateAction<ActiveNav>>,
-    colorWay: Array<string>
+    colorWay: string[]
 }
 
 function NavBar (props: NavProps) {
@@ -13,15 +13,15 @@ function NavBar (props: NavProps) {
     const bgColorsBody = props.colorWay
     const menu: Element | null = body.querySelector(".menu");
     const menuBorder: Element | null | undefined = menu?.querySelector(".menu_border");
-    
+
     // old active nav state (used for deactivating last nav item)
     const [oldActiveNav, setOldActiveNav] = useState<ActiveNav>(
         {
-        id: props.activeNav.id, 
+        id: props.activeNav.id,
         index: props.activeNav.index
         })
 
-    window.onload = function() {
+    window.onload = () => {
         animateNav()
     };
 
@@ -40,8 +40,6 @@ function NavBar (props: NavProps) {
         document.getElementById(props.activeNav.id)?.classList.add("active");
         document.getElementById(props.activeNav.id + "Title")?.classList.add("active");
         // animates nav border
-        const index = props.activeNav.index
-        // body.style.backgroundColor = bgColorsBody[index];
         const element = document.getElementById(props.activeNav.id)
         if (menu !== null){
             const offsetActiveItem = element?.getBoundingClientRect();
@@ -50,10 +48,10 @@ function NavBar (props: NavProps) {
                 (menuBorder as HTMLElement).style.transform = `translate3d(-${left}, 0 , 0)`;
             }
         }
-        // update oldActiveNav to current item so that "active" 
+        // update oldActiveNav to current item so that "active"
         //      is removed next time a diff page is viewed
         setOldActiveNav({
-            id: props.activeNav.id, 
+            id: props.activeNav.id,
             index: props.activeNav.index
         })
     }
@@ -62,9 +60,9 @@ function NavBar (props: NavProps) {
     <div className="anim-nav-bar">
         {/* <h1 id="name">ashley thorlin</h1> */}
         <menu className="menu">
-            {/* <!--     Home 23876C --> */}
-            <a 
-            className="menu_item" 
+            {/* <!--  Home  --> */}
+            <a
+            className="menu_item"
             id="homeNav"
             style={{"backgroundColor": bgColorsBody[0]}}
             onClick={() => props.setActiveNav({id: "homeNav", index: 0})}
@@ -83,8 +81,8 @@ function NavBar (props: NavProps) {
                 </p>
             </a>
             {/* <!--  About Me  --> */}
-            <a 
-            className="menu_item" 
+            <a
+            className="menu_item"
             id="aboutNav"
             style={{"backgroundColor": bgColorsBody[1]}}
             onClick={() => props.setActiveNav({id: "aboutNav", index: 1})}
@@ -103,14 +101,14 @@ function NavBar (props: NavProps) {
                     about me
                 </p>
             </a>
-            {/* <!-- Experience --> */}
-            <a 
-            className="menu_item" 
+            {/* <!--  Experience  --> */}
+            <a
+            className="menu_item"
             id="experienceNav"
             style={{"backgroundColor": bgColorsBody[2]}}
             onClick={() => props.setActiveNav({id: "experienceNav", index: 2})}
             href="#experience-container"
-            > 
+            >
                 <svg className="icon" viewBox="0 0 24 24" >
                     <path  d="M8,8 v-4 h8 v4"/>
                     <path  d="M4,18 v-10 h16 v10z"/>
@@ -124,9 +122,9 @@ function NavBar (props: NavProps) {
                     experience
                 </p>
             </a>
-            {/* <!-- Skills --> */}
-            <a 
-            className="menu_item" 
+            {/* <!--  Skills  --> */}
+            <a
+            className="menu_item"
             id="skillsNav"
             style={{"backgroundColor": bgColorsBody[3]}}
             onClick={() => props.setActiveNav({id: "skillsNav", index: 3})}
@@ -143,10 +141,10 @@ function NavBar (props: NavProps) {
                 >
                     skills
                 </p>
-            </a> 
-            {/* <!-- Projects --> */}
-            <a 
-            className="menu_item" 
+            </a>
+            {/* <!--  Projects  --> */}
+            <a
+            className="menu_item"
             id="projectsNav"
             style={{"backgroundColor": bgColorsBody[4]}}
             onClick={() => props.setActiveNav({id: "projectsNav", index: 4})}
@@ -164,7 +162,7 @@ function NavBar (props: NavProps) {
                     projects
                 </p>
             </a>
-            {/* <!-- Education 1C7665 --> */}
+            {/* <!--  Education  --> */}
             <a
             className="menu_item"
             id="educationNav"
@@ -184,9 +182,9 @@ function NavBar (props: NavProps) {
                     education
                 </p>
             </a>
-            {/* <!-- Contact --> */}
-            <a 
-            className="menu_item" 
+            {/* <!--  Contact  --> */}
+            <a
+            className="menu_item"
             id="contactNav"
             style={{"backgroundColor": bgColorsBody[6]}}
             onClick={() => props.setActiveNav({id: "contactNav", index: 6})}

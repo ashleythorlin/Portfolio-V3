@@ -24,7 +24,7 @@ function Home () {
                 </div>
                 <div className="content" >
                     <div className='section' id="about-me" style={{textAlign: "center"}}>
-                        <h1 
+                        <h1
                         style={{textAlign: "center"}}
                         >
                             about me

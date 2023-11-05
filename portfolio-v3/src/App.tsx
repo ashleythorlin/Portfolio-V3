@@ -15,13 +15,13 @@ function App() {
   // state for nav bar
   const [activeNav, setActiveNav] = useState<ActiveNav>(
     {
-      id: "homeNav", 
+      id: "homeNav",
       index: 0
     })
-    
+
   // pull color scheme from colorScheme.css
   const bgColorsBody = [
-    getComputedStyle(document.documentElement).getPropertyValue('--scheme1'), 
+    getComputedStyle(document.documentElement).getPropertyValue('--scheme1'),
     getComputedStyle(document.documentElement).getPropertyValue('--scheme2'),
     getComputedStyle(document.documentElement).getPropertyValue('--scheme3'),
     getComputedStyle(document.documentElement).getPropertyValue('--scheme4'),
@@ -30,16 +30,16 @@ function App() {
     getComputedStyle(document.documentElement).getPropertyValue('--scheme7')
   ];
 
-  //-----BACKGROUND ANIMATION ON SCROLL-----
+  // -----BACKGROUND ANIMATION ON SCROLL-----
   // state for background color
   const [scrollColor, setScrollColor] = useState<string>(bgColorsBody[0])
   //
   const handleScroll = () => {
       const position = window.scrollY;
-      let contentHeight = document?.getElementById('home-content')?.clientHeight
-      let containerHeight = document?.getElementById('home-container')?.clientHeight
-      
-      if(containerHeight != undefined && contentHeight != undefined){
+      const contentHeight = document?.getElementById('home-content')?.clientHeight
+      const containerHeight = document?.getElementById('home-container')?.clientHeight
+
+      if(containerHeight !== undefined && contentHeight !== undefined){
         if (position < contentHeight){
             setActiveNav({id: "homeNav", index: 0})
             setScrollColor(bgColorsBody[0])
@@ -80,7 +80,7 @@ function App() {
         backgroundColor: scrollColor
       }}
       >
-        <NavBar 
+        <NavBar
         activeNav={activeNav}
         setActiveNav={setActiveNav}
         colorWay={bgColorsBody}

@@ -17,7 +17,7 @@ const Contact = () => {
             <div className="content" id="contact-content">
                 <div className="section">
                     <div className='sub-section' id="contact-me">
-                        <h1 
+                        <h1
                         >
                             contact me
                         </h1>
@@ -50,7 +50,7 @@ interface ContactProps {
 
 const ContactLink = (props: ContactProps) => {
     return (
-        <a 
+        <a
         className="link contact-link"
         href={props.link}
         >
@@ -62,7 +62,7 @@ const ContactLink = (props: ContactProps) => {
 const ResumeLink = () => {
     const link = "https://docs.google.com/document/d/1yI4ytS8uV8nLnPgFpWSELHJcQo1wFoPgBaNN06RFNZk/edit?usp=sharing"
     return (
-        <a 
+        <a
         className="link resume-link"
         href={link}
         target="_blank"

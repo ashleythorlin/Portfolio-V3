@@ -1,6 +1,6 @@
 
 export type ActiveNav = {
-    id: string, 
+    id: string,
     index: number
 }
 
@@ -10,10 +10,10 @@ export type DisplayInfo = {
 
 export type SkillData = {
     name: string,
-    desc: Array<string>
+    desc: string[]
 }
 
 export type ProjectData = {
   name: string,
-  desc: Array<string>
+  desc: string[]
 }
