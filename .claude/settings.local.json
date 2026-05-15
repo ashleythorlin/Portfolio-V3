@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat /c/Users/Ashley/Desktop/Portfolio-V3/portfolio-v3/.env*)",
+      "Bash(npm ls:*)",
+      "Bash(awk -F'var\\(--' '{print $2}')",
+      "Bash(awk -F'\\)' '{print $1}')",
+      "Bash(awk '{print $1}')",
+      "Bash(sed 's/:$//')",
+      "Bash(rm -f src/data/update/query_notion.js src/env.ts .env-example src/components/navbar/test.css)",
+      "Bash(rmdir src/data/update)",
+      "Bash(npm run *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\([k for k in d.get\\('dependencies',{}\\) if 'fortawesome' in k]\\)\")",
+      "Bash(npm start *)",
+      "Bash(npx react-scripts *)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

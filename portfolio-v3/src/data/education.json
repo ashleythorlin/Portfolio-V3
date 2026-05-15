@@ -1,0 +1,22 @@
+{
+  "schools": [
+    {
+      "name": "TODO: University Name",
+      "degree": "TODO: B.S. Computer Science",
+      "dates": "TODO: 2019 – 2023",
+      "gpa": "TODO: 3.X / 4.0"
+    }
+  ],
+  "coursework": [
+    "TODO: Data Structures",
+    "TODO: Algorithms",
+    "TODO: Operating Systems"
+  ],
+  "organizations": [
+    {
+      "name": "TODO: Club Name",
+      "role": "TODO: Role",
+      "dates": "TODO: 2020 – 2023"
+    }
+  ]
+}

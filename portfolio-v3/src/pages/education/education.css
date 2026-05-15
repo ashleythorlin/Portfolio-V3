@@ -1,20 +1,99 @@
 #education-content {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 #education-content .section {
-    width: 30vw;
-    flex-direction: column;
-    padding: 5vh;
+  width: 30vw;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5vh;
 }
 
 #education-content .section h1 {
-    margin-bottom: 10px;
-    text-align: center;
+  margin-bottom: 10px;
 }
 
 #education-content .sub-section {
-    height: 50%;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+/* School entry */
+.education-school-entry {
+  margin-top: 1em;
+}
+
+.education-school-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--fontenhance);
+}
+
+.education-degree {
+  font-size: 13px;
+  color: var(--font);
+  margin: 0.2em 0;
+}
+
+.education-dates {
+  font-size: 12px;
+  color: var(--footertext);
+}
+
+/* Coursework tags */
+.coursework-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 0.75em;
+}
+
+.coursework-tag {
+  background-color: var(--surface-card);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.3em 0.8em;
+  border-radius: 20px;
+  font-size: 11px;
+  color: var(--font);
+}
+
+/* Organizations */
+.orgs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: 1em;
+}
+
+.org-entry {
+  border-left: 3px solid var(--linkhover);
+  padding-left: 1em;
+}
+
+.org-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--fontenhance);
+}
+
+.org-role {
+  font-size: 13px;
+  color: var(--font);
+  margin: 0.2em 0;
+}
+
+.org-dates {
+  font-size: 12px;
+  color: var(--footertext);
+}
+
+@media (max-width: 768px) {
+  #education-content {
+    flex-direction: column;
+  }
+  #education-content .section {
     width: 100%;
+    margin-left: 0 !important;
+  }
 }

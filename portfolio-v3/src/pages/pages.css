@@ -1,39 +1,55 @@
 .category {
-    /* to ensure that page assets can be overlayed */
-    position: relative; 
+  position: relative;
 }
 
 .container {
-    height: 120vh;
-    width: 100vw;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  height: 120vh;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
-    height: 80vh;
+  height: 80vh;
 }
 
 .section {
-    display: flex;
-    margin: 8vw;
-    padding: 5em;
-    background-color: var(--section);
-    height: 75vh;
-    justify-items: center;
-    align-items: center;
-    border-radius: 3%;
+  display: flex;
+  margin: 3vw 8vw;
+  padding: 4em 5em;
+  background-color: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  height: 75vh;
+  justify-items: center;
+  align-items: center;
+  border-radius: 16px;
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--surface-shadow);
 }
 
-/* .subsection {
-    margin: margin;
-} */
+.section > h1 {
+  position: relative;
+  padding-bottom: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+.section > h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1.8em;
+  height: 2px;
+  background: var(--contrast);
+  border-radius: 2px;
+}
 
 h1 {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .page-assets {
-    position: absolute;
+  position: absolute;
 }
