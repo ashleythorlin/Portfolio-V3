@@ -13,7 +13,20 @@
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\([k for k in d.get\\('dependencies',{}\\) if 'fortawesome' in k]\\)\")",
       "Bash(npm start *)",
       "Bash(npx react-scripts *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(npm install *)",
+      "Bash(timeout 15 npx vite --port 5173)",
+      "Bash(timeout 20 npx vite --port 5173)",
+      "Bash(npx vite *)",
+      "Bash(npm view *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173)",
+      "Bash(curl -s http://localhost:5174/)",
+      "Bash(curl -s \"http://localhost:5174/src/scene/Particles.tsx\" -o /dev/null -w \"%{http_code}\")",
+      "Bash(curl -s \"http://localhost:5174/@vite/client\" -o /dev/null -w \" vite-client:%{http_code}\\\\n\")",
+      "Bash(npm uninstall *)",
+      "Bash(grep -o \".\\\\{0,100\\\\}resolution.\\\\{0,100\\\\}\" /mnt/c/Users/Ashley/Desktop/Portfolio-V3/portfolio-v3/node_modules/@shadergradient/react/dist/chunk-ST3I7JZX.mjs)",
+      "Bash(grep -o \".\\\\{0,100\\\\}grainBlending.\\\\{0,100\\\\}\" /mnt/c/Users/Ashley/Desktop/Portfolio-V3/portfolio-v3/node_modules/@shadergradient/react/dist/chunk-DTOHMYM5.mjs)",
+      "Skill(vercel-plugin:react-best-practices)"
     ]
   }
 }
